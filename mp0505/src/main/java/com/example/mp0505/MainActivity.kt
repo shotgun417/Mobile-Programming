@@ -37,9 +37,22 @@ class MainActivity : AppCompatActivity() {
 
         sObj1.setOnCheckedChangeListener{	buttonView,	isChecked->
             // TODO : event handler
+            if (isChecked) {
+                ivObj1.visibility = View.VISIBLE
+            } else {
+                ivObj1.visibility = View.INVISIBLE
+            }
+
         }
         sObj2.setOnCheckedChangeListener{	buttonView,		isChecked->
             // TODO  event handler
+            if (isChecked) {
+                ivObj2.setImageResource(R.drawable.light31) // 또는 조명 켜진 이미지
+                tvObj.text = "라이트 ON"
+            } else {
+                ivObj2.setImageResource(R.drawable.light32) // 조명 꺼진 이미지
+                tvObj.text = "라이트 OFF"
+            }
         }
     }
 }

@@ -35,15 +35,28 @@ class MainActivity : AppCompatActivity() {
 
         btObj1.setOnClickListener {
             // TODO : event handler
+            ivObj.setImageResource(R.drawable.answer1)
+            Toast.makeText(this, "오답입니다!", Toast.LENGTH_SHORT).show()
         }
         btObj2.setOnClickListener(View.OnClickListener	{
             // TODO : event handler
+            ivObj.setImageResource(R.drawable.answer2)
+            Toast.makeText(this, "정답입니다!", Toast.LENGTH_SHORT).show()
         })
         btObj3.setOnClickListener(object : View.OnClickListener	{
             // TODO : event handler
+            override fun onClick(v: View?) {
+                ivObj.setImageResource(R.drawable.answer3)
+                Toast.makeText(this@MainActivity, "오답입니다!", Toast.LENGTH_SHORT).show()
+            }
         })
         btObj4.setOnClickListener(object : View.OnClickListener {
             // TODO : event handler
+
+            override fun onClick(v: View?) {
+                ivObj.setImageResource(R.drawable.answer4)
+                Toast.makeText(this@MainActivity, "오답입니다!", Toast.LENGTH_SHORT).show()
+            }
         })
     }
 }

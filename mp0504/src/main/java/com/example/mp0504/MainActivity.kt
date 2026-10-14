@@ -31,6 +31,19 @@ class MainActivity : AppCompatActivity() {
 
         tbObj.setOnCheckedChangeListener	{	buttonView,	isChecked	->
             // TODO : event handler
+            if (isChecked) {
+                ivObj.setImageResource(R.drawable.on)
+                ivObj1.setImageResource(R.drawable.light11)
+                ivObj2.setImageResource(R.drawable.light12)
+                ivObj3.setImageResource(R.drawable.light13)
+                ivObj.setImageResource(R.drawable.bg1)
+            } else {
+                ivObj.setImageResource(R.drawable.off)
+                ivObj1.setImageResource(R.drawable.light21)
+                ivObj2.setImageResource(R.drawable.light22)
+                ivObj3.setImageResource(R.drawable.light23)
+                ivObj.setImageResource(R.drawable.bg2)
+            }
         }
     }
 }
