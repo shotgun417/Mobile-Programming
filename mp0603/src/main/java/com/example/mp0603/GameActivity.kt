@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
 
 class GameActivity : AppCompatActivity() {
     // 이미지 뷰를 나타내는 ID 배열
@@ -42,7 +43,8 @@ class GameActivity : AppCompatActivity() {
         }
 
         // TODO : Intent로 전달된 데이터를 받아오기
-        val	shapeObj : ImageView = findViewById(R.id.imageView)
+        mShape = intent.getIntExtra("shape", 0)
+        val shapeObj : ImageView = findViewById(R.id.imageView)
 
         // 도형에 맞는 이미지를 설정
         if (mShape == 1)
@@ -84,13 +86,16 @@ class GameActivity : AppCompatActivity() {
             }
         }
 
-        // TODO : 완료 버튼 클릭 리스너 설정
-        val	btnObj: Button = findViewById(R.id.button)
-        btnObj.setOnClickListener {
-            // TODO : retutn intent
 
-            setResult(RESULT_OK, intent) //결과	전달
-            finish() //현재	액티비티	종료
+        val btnObj: Button = findViewById(R.id.button)
+        btnObj.setOnClickListener {
+            // TODO : return intent
+            val outIntent = Intent().apply {
+                putExtra("selectNum", selectNum)
+            }
+
+            setResult(RESULT_OK, outIntent) // 결과 전달
+            finish() // 현재 액티비티 종료
         }
 
     }

@@ -28,8 +28,17 @@ class MainActivity : AppCompatActivity() {
         
         btnObj.setOnClickListener	{
             // TODO : GameActivity로 이동하기 위한 인텐트 생성
+            val intent = Intent(this, GameActivity::class.java)
+
             // TODO : 라디오 버튼에서 선택된 값에 따라 인텐트에 값을 추가
+            if (rdObj1.isChecked) {
+                intent.putExtra("image", 1) // 고양이가 선택된 경우 1 전달
+            } else if (rdObj2.isChecked) {
+                intent.putExtra("image", 2) // 개가 선택된 경우 2 전달
+            }
+
             // TODO : GameActivity로 인텐트 전송 및 액티비티 시작
+            startActivity(intent)
         }
     }
 }

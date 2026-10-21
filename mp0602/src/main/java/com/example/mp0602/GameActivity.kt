@@ -36,8 +36,9 @@ class GameActivity : AppCompatActivity() {
             insets
         }
 
-        // TODO : 인텐트로부터 'image' 값을 받아오기(고양이 or 개)
 
+        // TODO : 인텐트로부터 'image' 값을 받아오기(고양이 or 개)
+        mImage = intent.getIntExtra("image", 0)
         // 고양이와 개 레이아웃을 설정
         val	imageObj01 : ImageView = findViewById(R.id.imageView01)
         val	imageObj02 : ImageView = findViewById(R.id.imageView02)
